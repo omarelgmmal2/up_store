@@ -48,6 +48,7 @@ dependencies:
   iconsax: ^0.0.8
   readmore: ^3.0.0
   flutter_credit_card: ^4.1.0
+  fluttertoast: ^8.2.12
 
 dev_dependencies:
   flutter_launcher_icons: "^0.14.4"

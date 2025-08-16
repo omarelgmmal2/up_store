@@ -17,6 +17,7 @@ import 'package:e_commerce/core/utils/text_style_theme.dart';
 import 'package:e_commerce/home/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -157,8 +158,17 @@ class _LoginScreenState extends State<LoginScreen> {
                 textStyle: TextStyleTheme.textStyle16Bold.copyWith(
                   color: AppColor.white,
                 ),
-                onPressed: () {
-                  if (formKey.currentState!.validate()) {
+                onPressed: () async{
+                  if (formKey.currentState!.validate()){
+                    await Fluttertoast.showToast(
+                        msg: "Login is success",
+                        toastLength: Toast.LENGTH_SHORT,
+                        gravity: ToastGravity.SNACKBAR,
+                        timeInSecForIosWeb: 1,
+                        backgroundColor: Colors.green,
+                        textColor: AppColor.white,
+                        fontSize: 16.sp,
+                    );
                     navigateTo(toPage: HomeView());
                   }
                 },

@@ -59,7 +59,7 @@ class ResetPasswordScreen extends StatelessWidget {
             textStyle: TextStyleTheme.textStyle16Bold.copyWith(
               color: AppColor.white,
             ),
-            onPressed: () {
+            onPressed: (){
               navigateTo(toPage: VerifyEmailAddressScreen(email: email));
             },
           ),

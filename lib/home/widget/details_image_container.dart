@@ -2,11 +2,13 @@ import 'package:e_commerce/core/design/app_image.dart';
 import 'package:e_commerce/core/utils/app_color.dart';
 import 'package:e_commerce/core/utils/app_images.dart';
 import 'package:e_commerce/core/utils/spacing.dart';
+import 'package:e_commerce/model/item_category_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class DetailsImageContainer extends StatefulWidget {
-  const DetailsImageContainer({super.key});
+  final ItemCategoryModel model;
+  const DetailsImageContainer({super.key, required this.model});
 
   @override
   State<DetailsImageContainer> createState() => _DetailsImageContainerState();
@@ -24,8 +26,8 @@ class _DetailsImageContainerState extends State<DetailsImageContainer> {
           height: 300.h,
           child: Center(
             child: AppImage(
-              AppImages.blueJaket,
-              fit: BoxFit.cover,
+              widget.model.image,
+              fit: BoxFit.contain,
               height: 270.h,
               width: 320.w,
             ),

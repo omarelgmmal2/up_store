@@ -1,7 +1,7 @@
 import 'package:e_commerce/core/logic/helper_methods.dart';
 import 'package:e_commerce/core/themes/theme_services.dart';
 import 'package:e_commerce/core/utils/app_strings.dart';
-import 'package:e_commerce/home/home_view.dart';
+import 'package:e_commerce/on_boarding/on_boarding_screens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -23,7 +23,7 @@ class ECommerceApp extends StatelessWidget {
           home: child,
         );
       },
-      child: HomeView(),
+      child: OnBoardingScreens(),
     );
   }
 }

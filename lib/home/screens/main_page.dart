@@ -24,7 +24,10 @@ class MainPage extends StatelessWidget {
               offset: Offset(0.w, -40.h),
               child: CustomBanner(),
             ),
-            CustomSectionHeading(text: "Popular Categories",onPressed: (){}),
+            CustomSectionHeading(
+                text: "Popular Categories"
+                ,onPressed: (){},
+            ),
             ItemCategory(),
           ],
         ),

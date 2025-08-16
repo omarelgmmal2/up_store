@@ -10,13 +10,15 @@ import 'package:e_commerce/home/widget/custom_storage_list.dart';
 import 'package:e_commerce/home/widget/details_bottom_nav_bar.dart';
 import 'package:e_commerce/home/widget/details_image_container.dart';
 import 'package:e_commerce/home/widget/details_price_and_discount_and_share.dart';
+import 'package:e_commerce/model/item_category_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
 
 class DetailsScreen extends StatelessWidget {
-  const DetailsScreen({super.key});
+  final ItemCategoryModel model;
+  const DetailsScreen({super.key, required this.model});
 
   @override
   Widget build(BuildContext context) {
@@ -25,14 +27,14 @@ class DetailsScreen extends StatelessWidget {
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: 36.w, vertical: 20.h),
         children: [
-          DetailsImageContainer(),
+          DetailsImageContainer(model: model),
           verticalSpace(20),
-          DetailsPriceAndDiscountAndShare(),
+          DetailsPriceAndDiscountAndShare(model: model),
           verticalSpace(16),
           Text(
             overflow: TextOverflow.ellipsis,
               maxLines: 1,
-              "Blue Shoes of Nike",
+              model.text,
               style: TextStyleTheme.textStyle16Bold,
           ),
           verticalSpace(9),
@@ -48,7 +50,7 @@ class DetailsScreen extends StatelessWidget {
             children: [
               AppImage(AppImages.bata),
               horizontalSpace(9),
-              Text("Bata", style: TextStyleTheme.textStyle14Bold),
+              Text(model.marka, style: TextStyleTheme.textStyle14Bold),
               horizontalSpace(9),
               Icon(Iconsax.verify5, color: AppColor.blue, size: 16),
             ],

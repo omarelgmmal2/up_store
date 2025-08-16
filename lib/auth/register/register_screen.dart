@@ -17,6 +17,7 @@ import 'package:e_commerce/core/utils/spacing.dart';
 import 'package:e_commerce/core/utils/text_style_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -219,8 +220,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 textStyle: TextStyleTheme.textStyle16Bold.copyWith(
                   color: AppColor.white,
                 ),
-                onPressed: () {
+                onPressed: ()async {
                   if (formKey.currentState!.validate()) {
+                    await Fluttertoast.showToast(
+                      msg: "A new account has been created",
+                      toastLength: Toast.LENGTH_SHORT,
+                      gravity: ToastGravity.SNACKBAR,
+                      timeInSecForIosWeb: 1,
+                      backgroundColor: Colors.green,
+                      textColor: AppColor.white,
+                      fontSize: 16.sp,
+                    );
                     navigateTo(toPage: LoginScreen());
                   }
                 },

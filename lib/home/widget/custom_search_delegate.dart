@@ -4,10 +4,13 @@ import 'package:flutter/material.dart';
 class CustomSearchDelegate extends SearchDelegate {
 
   List<String> searchItems = [
-    "High Quality Drilled ",
-    "Generic NGK Japanese",
-    "Car Air Filter",
-    "Magnaflow Exhaust",
+    "iPhone 11 64GB",
+    "Shoes of Nike",
+    "Blue INDURE Shoes",
+    "Blue Bata Shoes",
+    "Bink Bata shirt",
+    "Red Bata jaket",
+    "blue Bata jaket",
   ];
 
   @override

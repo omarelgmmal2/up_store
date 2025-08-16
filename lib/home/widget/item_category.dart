@@ -23,7 +23,9 @@ class ItemCategory extends StatelessWidget {
       itemCount: itemCategoryList.length,
       itemBuilder: (context, index) => GestureDetector(
         onTap: () {
-          navigateTo(toPage: DetailsScreen());
+          navigateTo(toPage: DetailsScreen(
+            model: itemCategoryList[index],
+          ));
         },
         child: CustomItemCategory(
           model: itemCategoryList[index],
